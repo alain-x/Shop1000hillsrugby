@@ -1,0 +1,22 @@
+.admin {
+  text-align: center;
+  margin-top: 80px;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+button {
+  display: inline;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #f88b2e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: linear-gradient(to right, rgb(193, 214, 193), rgb(17, 86, 17));
+}

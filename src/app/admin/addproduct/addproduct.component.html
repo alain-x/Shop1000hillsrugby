@@ -1,0 +1,46 @@
+<div>
+  <form (submit)="handleSubmit()">
+    <h2>Add Product</h2>
+    <p class="message" *ngIf="message">{{ message }}</p>
+
+    <!-- Input for Image URL -->
+    <input 
+      type="url" 
+      placeholder="Image URL" 
+      [(ngModel)]="imageUrl" 
+      name="imageUrl" 
+      required 
+    >
+
+    <!-- Category Dropdown -->
+    <select [(ngModel)]="categoryId" name="category" required>
+      <option value="">Select Category</option>
+      <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</option>
+    </select>
+
+    <!-- Other Fields -->
+    <input 
+      type="text" 
+      placeholder="Product name" 
+      [(ngModel)]="name" 
+      name="name" 
+      required 
+    >
+    <textarea 
+      placeholder="Description" 
+      [(ngModel)]="description" 
+      name="description" 
+      required 
+    ></textarea>
+    <input 
+      type="number" 
+      placeholder="Price" 
+      [(ngModel)]="price" 
+      name="price" 
+      required 
+    >
+
+    <!-- Submit Button -->
+    <button type="submit">Add Product</button>
+  </form>
+</div>

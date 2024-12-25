@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile-container {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin-bottom: 9rem;
+}
+
+.account-section,
+.history-section {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.account-section {
+  margin-top: 5px;
+  margin-right: 10px; /* Adds space between sections */
+}
+
+h2,
+h3 {
+  margin-top: 5px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.profile-button {
+  background-color: #f68b1e;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.profile-button:hover {
+  background-color: #c79868;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+li img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+li div {
+  flex: 1;
+}

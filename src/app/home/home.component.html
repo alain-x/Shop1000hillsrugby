@@ -1,0 +1,36 @@
+<head>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>Welcome to 1HR Shop</h1>
+    <p>The best in rugby-inspired fashion and accessories.</p>
+    <a routerLink="/product/:productId" class="cta-button">Shop Now</a>
+  </div>
+</section>
+
+<!-- Featured Products Section -->
+<section class="featured-products">
+  <div class="container">
+    <h2>Our Featured Products</h2>
+  </div>
+</section>
+
+<div class="home">
+  <p *ngIf="error" class="error">{{ error }}</p>
+  <div *ngIf="!error">
+    <app-productlist [products]="products"></app-productlist>
+    <app-pagination
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      (pageChange)="changePage($event)"
+    ></app-pagination>
+  </div>
+</div>

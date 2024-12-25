@@ -1,0 +1,46 @@
+<head>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<nav>
+  <a routerLink="/" class="logo">LOGO</a>
+
+  <!-- Search Form -->
+  <form (submit)="handleSearchSubmit()" class="search-container">
+    <input
+      type="text"
+      placeholder="Search product ..."
+      name="searchValue"
+      [(ngModel)]="searchValue"
+    />
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- Navigation Links -->
+  <div class="links">
+    <a routerLink="/" title="Home"> <i class="fas fa-home"></i> Home </a>
+    <a routerLink="/categories" title="Categories">
+      <i class="fas fa-th"></i> Category
+    </a>
+    <a *ngIf="isAuthenticated" routerLink="/profile" title="Account">
+      <i class="fas fa-user"></i> Account
+    </a>
+    <a *ngIf="isAdmin" routerLink="/admin" title="Admin Panel">
+      <i class="fas fa-tools"></i> Admin
+    </a>
+    <a *ngIf="!isAuthenticated" routerLink="/login" title="Login">
+      <i class="fas fa-sign-in-alt"></i> Login
+    </a>
+    <a *ngIf="isAuthenticated" (click)="handleLogout()" title="Logout">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </a>
+    <a routerLink="/cart" title="Cart">
+      <i class="fas fa-shopping-cart"></i> Cart
+    </a>
+  </div>
+</nav>

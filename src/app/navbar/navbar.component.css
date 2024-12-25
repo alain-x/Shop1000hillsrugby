@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  position: fixed; /* Make the nav fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure it spans the full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(to right, rgb(193, 214, 193), rgb(17, 86, 17));
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav .hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+nav .search-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+nav input {
+  padding: 10px;
+  width: 300px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+nav input:focus {
+  border-color: #000;
+}
+
+nav button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #fff;
+  color: #f68b1e;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+nav .links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav .links a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav .links a:hover {
+  color: #000;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 400px;
+  background: url("https://placehold.co/1920x1080") no-repeat center
+    center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-section .cta-button {
+  background-color: #047857; /* Tailwind green-600 */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-section .cta-button:hover {
+  background-color: #065f46; /* Tailwind green-700 */
+}
+
+/* Featured Products Section */
+.featured-products {
+  padding: 3rem 20px;
+}
+
+.featured-products .container {
+  text-align: center;
+}
+
+.featured-products h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-grid .product-card {
+  background-color: white;
+  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-grid .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.25rem; /* Smaller font size on mobile */
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  nav .hamburger {
+    display: block;
+  }
+
+  nav .search-container {
+    order: 2;
+    width: 100%;
+  }
+
+  nav input {
+    width: calc(100% - 80px);
+  }
+
+  nav button {
+    width: 70px;
+  }
+
+  nav .links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f68b1e;
+    text-align: center;
+    gap: 10px;
+    padding: 10px 0;
+    order: 3;
+  }
+
+  nav .links.show {
+    display: flex;
+  }
+}
