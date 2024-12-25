@@ -1,81 +1,48 @@
-/* Container Styling */
 .product-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  margin: 20px auto;
-  padding: 0 2%;
-  cursor: pointer;
+  gap: 10px;
+  margin-left: 2%;
 }
 
-/* Individual Card Styling */
 .product-item {
-  background-color: #ffffff;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  width: calc(25% - 20px);
+  border-radius: 5px;
+  padding: 15px 0px;
+  width: calc(20% - 20px);
   box-sizing: border-box;
   text-align: center;
-  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04);
+  background-color: #f3f9f3; /* Light green background */
+  border: 1px solid #cce7cc; /* Subtle green border */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
-.product-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Product Content Styling */
-.product-content img {
+img {
   max-width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 1px solid #f0f0f0;
+  height: 26vh;
+  border-bottom: 2px solid #d4edda; /* Greenish border for the image section */
 }
 
-.product-content h3 {
-  font-size: 1.2em;
-  margin: 10px 0 5px;
-  color: #333;
-  font-weight: bold;
-}
-
-.product-content p {
-  font-size: 0.95em;
-  color: #777;
-  margin: 5px 0 15px;
-  height: 45px;
-  overflow: hidden;
-}
-
-.product-content span {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #f68b1e;
-  margin-bottom: 15px;
-  display: block;
-}
-
-/* Button and Quantity Controls */
 button {
-  background-color: #1ef67c;
+  background-color: #4caf50; /* Green button background */
   border: none;
   color: #ffffff;
   font-size: 1em;
-  margin: 10px 0;
+  margin: 10px 0px;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-item:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translate(-5px);
 }
 
 button:hover {
-  background-color: #d39d67;
+  background-color: #388e3c; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
 .quantity-controls {
@@ -85,38 +52,23 @@ button:hover {
   gap: 10px;
 }
 
-.quantity-controls button {
-  background-color: #ccc;
-  border-radius: 4px;
-  color: #333;
+.quantity-controls span {
+  font-size: 1.5em;
   padding: 5px 10px;
+  color: #388e3c; /* Green color for quantity text */
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
+.quantity-controls button {
+  background-color: #81c784; /* Light green for buttons */
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 .quantity-controls button:hover {
-  background-color: #bbb;
-}
-
-.quantity-controls span {
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .product-item {
-    width: calc(33.33% - 20px);
-  }
-}
-
-@media (max-width: 768px) {
-  .product-item {
-    width: calc(50% - 20px);
-  }
-}
-
-@media (max-width: 480px) {
-  .product-item {
-    width: 100%;
-  }
+  background-color: #4caf50; /* Darker green on hover */
+  transform: scale(1.1); /* Slight zoom effect */
 }

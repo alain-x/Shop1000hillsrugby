@@ -32,6 +32,10 @@ nav .logo {
   color: #fff;
   text-decoration: none;
 }
+nav .logo img {
+  height: 40px;
+  width: 40px;
+}
 
 nav .hamburger {
   display: none;
