@@ -1,34 +1,42 @@
+<head>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
 <div class="container">
-    <h2 style="text-align: center">My Cart</h2>
-    <p *ngIf="message" class="message">{{ message }}</p>
-  
-    <div *ngIf="cart.length === 0">
-      <p>Your cart is empty</p>
-    </div>
-  
-    <div *ngIf="cart.length > 0">
-      <ul>
-        <li *ngFor="let item of cart" class="item">
-          <img [src]="item.imageUrl" [alt]="item.name" />
-          <div>
-            <h2>{{ item.name }}</h2>
-            <p>{{ item.description }}</p>
-            <span class="price">${{ item.price.toFixed(2) }}</span>
-  
-            <div class="controls">
-              <button (click)="decrementItem(item.id)">-</button>
-              <span>{{ item.quantity }}</span>
-              <button (click)="incrementItem(item.id)">+</button>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <h2>Total: ${{ totalPrice.toFixed(2) }}</h2>
-  
-      <!-- PayPal Button Container -->
-      <div id="paypal-button-container"></div>
-  
-      <button class="clear" (click)="clearCart()">Clear Cart</button>
-    </div>
+  <h2 style="text-align: center">My Cart</h2>
+  <p *ngIf="message" class="message">{{ message }}</p>
+
+  <div *ngIf="cart.length === 0">
+    <p>Your cart is empty</p>
   </div>
-  
+
+  <div *ngIf="cart.length > 0">
+    <ul>
+      <li *ngFor="let item of cart" class="item">
+        <img [src]="item.imageUrl" [alt]="item.name" />
+        <div>
+          <h2>{{ item.name }}</h2>
+          <p>{{ item.description }}</p>
+          <span class="price">${{ item.price.toFixed(2) }}</span>
+
+          <div class="controls">
+            <button (click)="decrementItem(item.id)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="incrementItem(item.id)">+</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <h2>Total: ${{ totalPrice.toFixed(2) }}</h2>
+
+    <!-- PayPal Button Container -->
+    <div id="paypal-button-container"></div>
+
+    <button class="clear" (click)="clearCart()">Clear Cart</button>
+  </div>
+</div>

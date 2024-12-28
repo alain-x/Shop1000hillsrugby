@@ -1,14 +1,28 @@
-<div class="container">
-    <ng-container *ngIf="error; else categoryList">
-        <p class="error">{{error}}</p>
-    </ng-container>
+<head>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
 
-    <ng-template #categoryList>
-        <div>
-            <h2>Categories</h2>
-            <ul *ngFor = "let category of categories" (click) ="handleCategoryClick(category.id)">
-                <li><button>{{category.name}}</button></li>
-            </ul>
-        </div>
-    </ng-template>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<div class="container">
+  <ng-container *ngIf="error; else categoryList">
+    <p class="error">{{ error }}</p>
+  </ng-container>
+
+  <ng-template #categoryList>
+    <div>
+      <h2>Categories</h2>
+      <ul
+        *ngFor="let category of categories"
+        (click)="handleCategoryClick(category.id)"
+      >
+        <li>
+          <button>{{ category.name }}</button>
+        </li>
+      </ul>
+    </div>
+  </ng-template>
 </div>
